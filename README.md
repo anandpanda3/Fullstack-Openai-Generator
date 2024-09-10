@@ -1,51 +1,72 @@
-Automated Build and Publish Process for Spring Boot and React Applications
-Project Overview
-This project automates the build and publishing process for a Spring Boot backend and React frontend to GitHub’s npm registry using GitHub Actions. The integration enables smooth, continuous deployment while ensuring secure and efficient handling of version control, authentication, and error management.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDeploy: Automating Spring Boot and React Build & Publish</title>
+</head>
+<body>
+    <h1>AutoDeploy: Automating Spring Boot and React Build & Publish</h1>
 
-Key Features
-GitHub Actions Workflow: Automates the process of building the Spring Boot backend and React frontend, followed by publishing the frontend package to the npm registry.
-Spring Boot Backend: Automates the build process for the Spring Boot application, ensuring the backend is efficiently compiled and ready for deployment.
-Frontend Packaging: Publishes a TypeScript Axios package, allowing for easy integration with the backend API.
-Node.js and npm Integration: Installs npm dependencies and automatically bumps the package version to ensure users always access the latest updates.
-GitHub Authentication: Uses GitHub tokens to securely authenticate and publish packages, enhancing the security of the CI/CD pipeline.
-API Integration: Enables the React app to fetch data from the Spring Boot backend using the published npm package, ensuring dynamic and real-time data interaction.
-Robust Error Handling: Implements strong input validation and error management to enhance the user experience and ensure application stability.
-How It Works
-GitHub Actions Setup:
-The GitHub Actions workflow is configured to automate building the backend and frontend, followed by publishing the frontend package to GitHub’s npm registry.
+    <h2>Project Overview</h2>
+    <p>
+        <strong>AutoDeploy</strong> is an automated solution for building and publishing both a Spring Boot backend and React frontend to GitHub’s npm registry using GitHub Actions. This project simplifies continuous deployment and enhances version control and error handling while maintaining security.
+    </p>
 
-Backend (Spring Boot):
-The workflow builds the Spring Boot backend using Maven, ensuring it is packaged for deployment.
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>GitHub Actions Workflow:</strong> Automates the build and publish process for both the backend and frontend applications.</li>
+        <li><strong>Spring Boot Backend:</strong> Automatically compiles and packages the Spring Boot application, preparing it for deployment.</li>
+        <li><strong>Frontend Packaging:</strong> Publishes a TypeScript Axios package for seamless API interaction with the backend.</li>
+        <li><strong>Node.js and npm Integration:</strong> Installs npm dependencies and automatically bumps package versions.</li>
+        <li><strong>GitHub Authentication:</strong> Uses GitHub tokens to securely authenticate and publish packages.</li>
+        <li><strong>API Integration:</strong> Allows the React frontend to dynamically fetch backend data via the npm package.</li>
+        <li><strong>Error Handling:</strong> Implements input validation and error management to ensure a smooth user experience.</li>
+    </ul>
 
-Frontend (React + Axios):
-The frontend application, built with React, is packaged and published to the npm registry using TypeScript Axios. The workflow installs npm dependencies and automatically bumps the package version.
+    <h2>Tech Stack</h2>
+    <ul>
+        <li><strong>Backend:</strong> Spring Boot, Maven</li>
+        <li><strong>Frontend:</strong> React, TypeScript, Axios</li>
+        <li><strong>CI/CD:</strong> GitHub Actions</li>
+        <li><strong>Package Management:</strong> npm, GitHub npm Registry</li>
+        <li><strong>Authentication:</strong> GitHub Tokens</li>
+    </ul>
 
-Secure Publishing:
-The GitHub token is used as a secret to securely authenticate and publish the npm package, ensuring safe package management.
+    <h2>How It Works</h2>
+    <ol>
+        <li><strong>GitHub Actions Setup:</strong> The workflow automates building and publishing for both backend and frontend.</li>
+        <li><strong>Backend (Spring Boot):</strong> The Spring Boot backend is compiled using Maven, preparing it for deployment.</li>
+        <li><strong>Frontend (React + Axios):</strong> The frontend app is built with React and TypeScript Axios and published to npm.</li>
+        <li><strong>Secure Publishing:</strong> GitHub tokens authenticate and publish the npm package securely.</li>
+        <li><strong>API Integration:</strong> The React app dynamically fetches data from the backend via the npm package.</li>
+        <li><strong>Error Management:</strong> Input validation and error handling ensure a seamless experience.</li>
+    </ol>
 
-API Integration:
-The React app fetches data from the backend API, using the npm package created during the build process.
+    <h2>Installation</h2>
 
-Error Management:
-The workflow handles input validation and error management, ensuring a seamless user experience across the application.
+    <h3>Clone the Repository</h3>
+    <pre>
+        <code>
+git clone https://github.com/yourusername/AutoDeploy.git
+cd AutoDeploy
+        </code>
+    </pre>
 
-Installation
-Clone the Repository
-bash
-Copy code
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-Backend Setup (Spring Boot)
-bash
-Copy code
+    <h3>Backend Setup (Spring Boot)</h3>
+    <pre>
+        <code>
 # Navigate to backend directory
 cd backend
 
 # Build the Spring Boot project
 mvn clean package
-Frontend Setup (React + TypeScript Axios)
-bash
-Copy code
+        </code>
+    </pre>
+
+    <h3>Frontend Setup (React + TypeScript Axios)</h3>
+    <pre>
+        <code>
 # Navigate to frontend directory
 cd ../frontend
 
@@ -54,23 +75,35 @@ npm install
 
 # Start the frontend server for local development
 npm start
-GitHub Actions CI/CD
-Create a GitHub token with the necessary permissions to publish to the npm registry.
-Set up the .github/workflows folder for GitHub Actions and add the appropriate configuration files for building and publishing.
-On each push to the main branch, the action will automatically build, bump the version, and publish the package.
-Environment Variables
-Ensure to set up the following environment variables in your repository:
+        </code>
+    </pre>
 
-GITHUB_TOKEN: GitHub token for authentication during publishing.
-DATABASE_URL: URL for your Spring Boot backend database.
-Usage
-Frontend: Fetch data from the backend by importing the published npm package.
-Backend: Serve data to the frontend and manage API requests.
-Contributing
-We welcome contributions! Please follow the steps below:
+    <h3>GitHub Actions CI/CD</h3>
+    <p>
+        Set up the <code>.github/workflows</code> folder for GitHub Actions with the necessary configuration files for building and publishing. On each push to the main branch, the workflow will automatically build, bump the version, and publish the package.
+    </p>
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes.
-Push your branch (git push origin feature-branch).
-Open a pull request.
+    <h2>Environment Variables</h2>
+    <p>Ensure to set up the following environment variables in your repository:</p>
+    <ul>
+        <li><strong>GITHUB_TOKEN:</strong> GitHub token for authentication.</li>
+        <li><strong>DATABASE_URL:</strong> URL for your Spring Boot backend database.</li>
+    </ul>
+
+    <h2>Usage</h2>
+    <ul>
+        <li><strong>Frontend:</strong> Fetch data from the backend by importing the published npm package.</li>
+        <li><strong>Backend:</strong> Serve data to the frontend and manage API requests.</li>
+    </ul>
+
+    <h2>Contributing</h2>
+    <ol>
+        <li>Fork the repository.</li>
+        <li>Create a new branch (<code>git checkout -b feature-branch</code>).</li>
+        <li>Make your changes.</li>
+        <li>Push to the branch (<code>git push origin feature-branch</code>).</li>
+        <li>Open a pull request.</li>
+    </ol>
+</body>
+</html>
+
